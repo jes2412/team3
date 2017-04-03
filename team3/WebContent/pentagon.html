@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+.svg-pentagon {text-align: center;}
+ .svg-pentagon svg {}
+.pentagon {
+            stroke-width:0.5px
+            -webkit-transform:rotate(36deg);
+            -moz-transform:rotate(36deg);
+            //transform:rotate(36deg);
+        }
+        .pentagon-1 {
+            fill: #EFE3E5;
+        }
+        .pentagon-2 {
+            fill: #F0D9D8;
+        }
+        .pentagon-3 {
+            fill: #F1CDC5;
+        }
+        .pentagon-4 {
+            fill: #F2C1B6;
+        }
+        .pentagon-5 {
+            fill: #F3AB97;
+            stroke-width: 1px;
+            stroke: rgba(0, 0, 0, .5);
+        }
+        .pentagonAbility {
+            /*fill: #F17D61;*/
+            fill: rgba(241, 125, 97, .6);
+            stroke-width: 1px;
+            stroke: rgba(241, 125, 97, 1);
+        }
+        text{font-size: 13px;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="d3.v3.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<div class="svg-pentagon" style="background-color: gray; width: 250px;height: 240px">
+    <svg id="J-svg-pentagon"  width="250" height="250">
+        <g transform="translate(88, 95)" id="polygon_g">
+            <polygon class="pentagon pentagon-5" />
+            <polygon class="pentagon pentagon-4" />
+            <polygon class="pentagon pentagon-3" />
+            <polygon class="pentagon pentagon-2" />
+            <polygon class="pentagon pentagon-1" />
+         </g>
+        <g transform="translate(88, 95)">
+            <text class="text5">5</text>
+            <text class="text4">4</text>
+            <text class="text3">3</text>
+            <text class="text2">2</text>
+            <text class="text1">1</text>
+        </g>
+    </svg>
+</div>
+<input type="text" id="t1"><input type="text" id="t2"><input type="text" id="t3"><input type="text" id="t4"><input type="text" id="t5"><br/>
+<button id="submit">버튼</button>
+</body>
+<script>
+var svgPentagon = $('#J-svg-pentagon');
+var abilityPentagon;
+var points = {
+    base : ["6", "1", "10.7552826", "4.45491503", "8.93892626", "10.045085", "3.06107374", "10.045085", "1.24471742", "4.45491503"],
+    pointsAbility : []
+}
+var setPentagon = function(num) {
+    for (i=1;i<=num;i++) {
+        var pointsChildren = 'points' + i;
+        points[pointsChildren] = new Array();
+        for (j=0;j<points.base.length;j++) {
+            points[pointsChildren].push((parseFloat(points.base[j]) * (6 + i * 4)).toFixed(2));
+            points[pointsChildren][j] = parseFloat(points[pointsChildren][j]) - (i * 24);
+        }
+        svgPentagon.find('.pentagon-' + i).attr('points', points[pointsChildren].join(' '));
+        svgPentagon.find(".text"+i).attr("x", 36).attr("y", 18-(i*20)).attr("text-anchor", "middle");
+   }
+}
+setPentagon(5);
+
+	var p1 = 1;
+	var p2 = 1;
+	var p3 = 1;
+	var p4 = 1;
+	var p5 = 1;
+    var pentagonAbility = svgPentagon.find('.pentagonAbility');
+    var temp ='0,0 0,0 0,0 0,0 0,0';
+    pentagonAbilityPoints = points['points' + p1][0] + ' ' + points['points' + p1][1] + ' ' +
+                            points['points' + p2][2] + ' ' + points['points' + p2][3] + ' ' +
+                            points['points' + p3][4] + ' ' + points['points' + p3][5] + ' ' +
+                            points['points' + p4][6] + ' ' + points['points' + p4][7] + ' ' +
+                            points['points' + p5][8] + ' ' + points['points' + p5][9];
+  var abilityPentagon =   d3.select("#polygon_g").append("polygon").attr("id", "abilityPentagon").attr("class","pentagon").attr("class", "pentagonAbility");
+  abilityPentagon.attr('points', pentagonAbilityPoints);
+  temp = pentagonAbilityPoints;
+ 
+$("#submit").on("click", function() {
+	p1 =  $("#t1").val();
+	p2 =  $("#t2").val();
+	p3 =  $("#t3").val();
+	p4 =  $("#t4").val();
+	p5 =  $("#t5").val();
+    pentagonAbilityPoints = points['points' + p1][0] + ' ' + points['points' + p1][1] + ' ' +
+    points['points' + p2][2] + ' ' + points['points' + p2][3] + ' ' +
+    points['points' + p3][4] + ' ' + points['points' + p3][5] + ' ' +
+    points['points' + p4][6] + ' ' + points['points' + p4][7] + ' ' +
+    points['points' + p5][8] + ' ' + points['points' + p5][9];
+	abilityPentagon.attr('points', temp).transition().duration(1500).attr('points', pentagonAbilityPoints);
+	temp = pentagonAbilityPoints;
+});
+</script>
+</html>
