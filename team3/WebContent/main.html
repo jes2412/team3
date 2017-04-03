@@ -4,27 +4,30 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-	*{margin: 0; padding: 0}
-	 header{width: 100vw; height: 10vh; background-color: #ddd}
-	#main_wrap{width: 100vw; height: 90vh;background-color: red;}
-	#main_top{width: 100vw;height: 30vh;background-color: pink}
-	#main_notice{width:50vw; height: 40vh;background-color: green;float: left}
-	#main_bean_introduction{width: 50vw; height: 20vh;background-color: blue;float: right}
-	#main_bean_blending{width: 50vw; height: 20vh; background-color: gray;float: right}
-	#main_users_blending1{clear:both;width: 100vw; height: 20vh;background-color: black}
+ *{margin: 0; padding: 0}
+ #wrap{width: 60vw; height: 100vh;margin:0 auto;background-color: red}
+ header{width: 100%; height: 15%; background-color: gray}
+ #main{width: 100%; height: 70%; background-color: green}
+ #main_top{width: 100%; height: 40%; background-color: pink; margin: 0 auto;}
+ #main_content{width: 100%; height: 60%;display:flex;background-color: red}
+ #main_content1{width: 40%; height: 100%; background-color: blue}
+ #main_content2{width: 30%; height: 100%; background-color: orange}
+ #main_content3{width: 30%; height: 100%; background-color: gray}
+ footer{width: 100%; height: 15%; background-color: black}
 </style>
 </head>
 <body>
-<style>
-</style>
-<header>
-</header>
-<div id="main_wrap">
-<div id="main_top"></div>
-<div id="main_notice"></div>
-<div id="main_bean_introduction"></div>
-<div id="main_bean_blending"></div>
-<div id="main_users_blending1"></div>
+<div id="wrap">
+	<header></header>
+	<div id="main">
+		<div id="main_top"></div>
+		<div id="main_content">
+			<div id="main_content1"></div>
+			<div id="main_content2"></div>
+			<div id="main_content3"></div>
+		</div>
+	</div>
+	<footer></footer>
 </div>
 </body>
 </html>
