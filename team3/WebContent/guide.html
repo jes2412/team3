@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+*{margin: 0; padding: 0}
+#guide_wrap{width: 60vw; height: 100vh; margin: 0 auto}
+header{width: 100%; height: 10%; background-color: gray}
+#guide_main{width: 100%; height: 80%; background-color: pink}
+.guide_main_line:nth-of-type(1){width: 100%; height: 50%;display:flex;background-color: orange}
+.guide_main_line:nth-of-type(2){width: 100%; height: 50%; display:flex;background-color: lightblue}
+.guide_content{width: 33%; height: 100%;}
+.guide_content:nth-of-type(2){width:34%;}
+
+footer{width: 100%; height: 10%; background-color: black}
+</style>
+</head>
+<body>
+<div id="guide_wrap">
+	<header></header>
+	<div id="guide_main">	
+		<div class="guide_main_line">
+			<div class="guide_content"style="background-color:red"></div>
+			<div class="guide_content" style="background-color:pink"></div>
+			<div class="guide_content" style="background-color:green"></div>
+		</div>
+		<div class="guide_main_line">
+			<div class="guide_content" style="background-color:green"></div>
+			<div class="guide_content" style="background-color:red"></div>
+			<div class="guide_content" style="background-color:pink"></div>
+		</div>
+	</div>
+	<footer></footer>
+</div>
+</body>
+</html>
