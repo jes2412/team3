@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://d3js.org/d3.v3.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+	<svg id="roastingSvg" style="width: 700px">
+		<g id="MEDIUM"></g>
+		<g id="HIGH"></g>
+		<g id="CITY"></g>
+		<g id="FULLCITY"></g>
+		<g id="FRENCH"></g>
+		<g id="ITALIAN"></g>
+	</svg>
+</body>
+<script>
+var rectHeight = 40;
+var rectWidth = 100;
+var rectY = 40;
+var gName = ["MEDIUM", "HIGH", "CITY", "FULLCITY", "FRENCH", "ITALIAN"];
+var barName = ["mediumBar", "highBar", "cityBar", "fullCityBar", "frenchBar", "italianBar"];
+var txtName = ["mediumTxt", "highTxt", "cityTxt", "fullCityTxt", "frenchTxt", "italianTxt"];
+var hexName = ["mediumHex", "highHex", "cityHex", "fullCityHex", "frenchHex", "italianHex"];
+var colors = ["#8a792d", "#855e29", "#754215", "#63371b", "#4d2c1e", "#382318"];
+var basePoint = [5, 2.75, 4, 4.5, 2, 4.5, 1, 2.75, 2, 1, 4, 1];
+
+for(var i = 0; i<gName.length; i++){
+	barName[i] = d3.select("#"+gName[i]).append("rect").attr("x", rectWidth*i).attr("y",rectY);
+	barName[i].attr("width", rectWidth).attr("height", rectHeight).attr("stroke", "white").attr("stroke-width", "1").attr("fill", colors[i]);
+	txtName[i] = d3.select("#"+gName[i]).append("text").text(gName[i]).attr("fill", "white").attr("y", rectY+rectHeight/2+5);
+	var hexScale = 8;
+	var hexX = 0;
+	var hexY = 0;
+	var points = "";
+	for(var p = 0 ; p< basePoint.length; p++){
+		if(p%2==0){ // x 좌표
+			points += basePoint[p]*hexScale+hexX+(rectWidth*i)+25+", ";
+		} else { //y좌표
+			points += basePoint[p]*hexScale+hexY+" ";
+		}
+	}
+	hexName[i] = d3.select("#"+gName[i]).append("polygon").attr("points", points).attr("fill", colors[i]).attr("opacity", 0);
+ }
+txtName[0].attr("x", 15);
+txtName[1].attr("x", rectWidth+30);
+txtName[2].attr("x", rectWidth*2+35);
+txtName[3].attr("x", rectWidth*3+20);
+txtName[4].attr("x", rectWidth*4+20);
+txtName[5].attr("x", rectWidth*5+20);
+hexName[0].attr("opacity", 1);
+ $gs = $("#roastingSvg").find("g");
+ $before = $("#MEDIUM").find("polygon");
+ $gs.each(function(i) {
+ 	$(this).on("click", function() {
+ 		$before.attr("opacity", 0);
+ 		$(this).find("polygon").css("transition-duration", "1s").attr("opacity", 1);
+ 		$before = $(this).find("polygon");
+ 	})
+ })
+ </script>
+</html>
+
+
+
+
+
