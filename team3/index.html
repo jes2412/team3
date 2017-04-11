@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="http://d3js.org/d3.v3.js"></script>
+</head>
+<body>
+<style>
+*{margin: 0; padding: 0}
+li{list-style-type: none; float: left}
+#header_top{height: 10vh; width: 100%; background-color: #222; display: flex;align-items:center;color:#e8af97;font-size: 0.5rem}
+#header_top img{height: 60%; padding-left: 10px}
+#header_top ul{margin-left: auto}
+#header_top li{margin-right: 10px}
+#header_bottom{height: 5vh; width: 100%;background-color: #FFF;font-size:0.5rem;border-bottom: 2px solid black;
+ font-family:'Noto Sans KR',sans-serif,'나눔고딕','NG','Malgun Gothic',dotum;display: flex;align-items:center;justify-content:center}
+#header_bottom ul{height:100%;width: 60%;display: flex;align-items:center;justify-content:center}
+#header_bottom li{width: 12.5%;text-align: center}
+</style>
+<header>
+<div id="header_top">
+	<img src="img/logo.png"/>
+	<ul>
+		<li>로그인</li>
+		<li>장바구니</li>
+	</ul>
+</div>
+<div id="header_bottom">
+	<ul>
+		<li>원두정보</li>
+		<li>블랜딩 가이드</li>
+		<li>Order</li>
+		<li>커뮤니티</li>
+		<li>공지사항</li>
+		<li>1:1 문의</li>
+	</ul>
+</div>
+</header>
+<style>
+	#wrap{display: flex;align-items:center;justify-content:center;flex-direction:column;}
+	#main_top_wrap{width: 100%; height: 50vh; background-color: #d4cdc5;display: flex;align-items:center;justify-content:center;border-bottom: 2px solid black}
+	#main_top{width: 60%; height:90%;display: flex;align-items:center;justify-content:space-between;}
+	#main_top div{width: 47.5%; height: 100%;}
+	#main_top div img{width: 100%; height: 100%}
+</style>
+<div id="wrap">
+	<div id="main_top_wrap">
+		<div id="main_top">
+			<div id="main_top_stillImg"><img src="img/coffee_mar2.jpg"/></div>
+			<div id="main_top_slideImg"><img src="img/drip_banner.png"/></div>
+		</div><!-- main_top -->
+	</div><!-- main_wrap -->
+<style>
+	#main_single_wrap{width: 100%; height: 34vh;display: flex;align-items:center;justify-content:center;margin-top: 2vh;border-bottom: 2px solid black}
+	#main_single{height: 100%; width: 60%;display: flex;align-items:center;justify-content:space-around}
+	.main_single_items{width: 33%; height: 100%; font-size: 0.5rem;text-align: center;}
+	.main_single_items h4{width:100%;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+	.main_single_items img{width: 100%;height: 80%}
+</style>		
+		<div id="main_single_wrap">
+			<div id="main_single">
+				<div class="main_single_items">
+					<img src="img/1462860082867s0.jpg"/>
+					<h3>브라질파젠다 산타루시아</h3>
+					<h4>커피꽃향의 은은한 아로마와 감귤의 화사한 산미, 깔끔한 후미</h4>
+					<h5>200g : 5000원</h5>
+				</div>
+				<div class="main_single_items">
+					<img src="img/1462860632217s0.jpg"/>
+					<h3>콜롬비아 안티오기아수프리모</h3>
+					<h4>커피꽃향의 은은한 아로마와 감귤의 화사한 산미, 깔끔한 후미</h4>
+					<h5>200g : 5000원</h5>	
+				</div>
+				<div class="main_single_items">
+					<img src="img/1462860656720s0.jpg"/>
+					<h3>에티오피아 예가체프G2</h3>
+					<h4>커피꽃향의 은은한 아로마와 감귤의 화사한 산미, 깔끔한 후미</h4>
+					<h5>200g : 5000원</h5>
+				</div>
+			</div><!-- main_single -->
+		</div><!-- main_single_wrap -->
+<style>
+	#main_blending_wrap{width: 100%; height: 40vh; display: flex;align-items:center;justify-content:center;border-bottom: 2px solid black}
+	#main_blending{width:80%;height:100%;display: flex;align-items:center;justify-content:space-around}
+	#main_blending div{width: 33%; height: 90%;}
+	#blending_beanKind{position: relative;overflow: hidden}
+	#blending_beanKind img{width: 100%; height: 100%;position: absolute;}
+</style>
+		<div id="main_blending_wrap">
+			<div id="main_blending">
+				<div id="blending_beanKind">
+					<img src="img/1462860082867s0.jpg"/>
+					<img src="img/1462860632217s0.jpg" style="left: 20%"/>
+					<img src="img/1462860656720s0.jpg" style="left: 40%"/>
+				</div>
+<style>
+.svg-pentagon {text-align: center;}
+ .svg-pentagon svg {}
+.pentagon {
+            stroke-width:0.5px
+            -webkit-transform:rotate(36deg);
+            -moz-transform:rotate(36deg);
+            //transform:rotate(36deg);
+        }
+        .pentagon-1 {
+            fill: #EFE3E5;
+        }
+        .pentagon-2 {
+            fill: #F0D9D8;
+        }
+        .pentagon-3 {
+            fill: #F1CDC5;
+        }
+        .pentagon-4 {
+            fill: #F2C1B6;
+        }
+        .pentagon-5 {
+            fill: #F3AB97;
+            stroke-width: 1px;
+            stroke: rgba(0, 0, 0, .5);
+        }
+        .pentagonAbility {
+            /*fill: #F17D61;*/
+            fill: rgba(241, 125, 97, .6);
+            stroke-width: 1px;
+            stroke: rgba(241, 125, 97, 1);
+        }
+        text{font-size: 13px;}
+       #blending_beanSpec{display: flex; align-items:center;justify-content:center }
+</style>			
+				<div id="blending_beanSpec"  class="svg-pentagon">
+					<svg id="J-svg-pentagon" style="height: 240px; height: 240px">
+      				  <g transform="translate(88, 95)" id="polygon_g">
+         				<polygon class="pentagon pentagon-5" />
+          				<polygon class="pentagon pentagon-4" />
+       				    <polygon class="pentagon pentagon-3" />
+       				   	<polygon class="pentagon pentagon-2" />
+       					<polygon class="pentagon pentagon-1" />
+     			   	 </g>
+     			  	 <g transform="translate(88, 95)">
+      			   	   <text class="text5">5</text>
+     			   	   <text class="text4">4</text>
+     			   	   <text class="text3">3</text>
+     			   	   <text class="text2">2</text>
+     			   	   <text class="text1">1</text>
+        				</g>
+ 					</svg>
+				</div>
+				<div id="blending_Comment">
+					<h3>리뷰-평가1</h3>
+					<h3>리뷰-평가2</h3>
+					<h3>리뷰-평가3</h3>
+					<h3>리뷰-평가4</h3>
+					<h3>리뷰-평가5</h3>
+				</div>
+			</div>
+		</div><!-- main_blending_wrap  -->
+</div><!-- wrap -->
+<style>
+	footer{background-color: #727272; width: 100vw; height: 20vh;display: flex;align-items:center;justify-content:center}
+	#footer_main{width: 60%; height: 50%;}
+</style>
+<footer>
+	<div id=footer_main>
+		<h3>주문·배송문의</h3>
+		<h3>031-8047-9388</h3>
+		<h4>평일 09:00 - 17:00 (점심 12:00 - 13:00)</h4>
+		<h4>제품문의  080-023-5454 (수신자요금부담)</h4>
+		<h4>E-mail  osulloc.com@amorehacific.com 대량구매, 제휴 등 이메일 문의</h4>
+	</div>
+</footer>
+<script>
+var svgPentagon = $('#J-svg-pentagon');
+var abilityPentagon;
+var points = {
+    base : ["6", "1", "10.7552826", "4.45491503", "8.93892626", "10.045085", "3.06107374", "10.045085", "1.24471742", "4.45491503"],
+    pointsAbility : []
+}
+var setPentagon = function(num) {
+    for (i=1;i<=num;i++) {
+        var pointsChildren = 'points' + i;
+        points[pointsChildren] = new Array();
+        for (j=0;j<points.base.length;j++) {
+            points[pointsChildren].push((parseFloat(points.base[j]) * (6 + i * 4)).toFixed(2));
+            points[pointsChildren][j] = parseFloat(points[pointsChildren][j]) - (i * 24);
+        }
+        svgPentagon.find('.pentagon-' + i).attr('points', points[pointsChildren].join(' '));
+        svgPentagon.find(".text"+i).attr("x", 36).attr("y", 18-(i*20)).attr("text-anchor", "middle");
+   }
+}
+setPentagon(5);
+
+	var p1 = 3;
+	var p2 = 4;
+	var p3 = 5;
+	var p4 = 3;
+	var p5 = 3;
+    var pentagonAbility = svgPentagon.find('.pentagonAbility');
+    var temp ='0,0 0,0 0,0 0,0 0,0';
+    pentagonAbilityPoints = points['points' + p1][0] + ' ' + points['points' + p1][1] + ' ' +
+                            points['points' + p2][2] + ' ' + points['points' + p2][3] + ' ' +
+                            points['points' + p3][4] + ' ' + points['points' + p3][5] + ' ' +
+                            points['points' + p4][6] + ' ' + points['points' + p4][7] + ' ' +
+                            points['points' + p5][8] + ' ' + points['points' + p5][9];
+  var abilityPentagon =   d3.select("#polygon_g").append("polygon").attr("id", "abilityPentagon").attr("class","pentagon").attr("class", "pentagonAbility");
+  abilityPentagon.attr('points', pentagonAbilityPoints);
+  temp = pentagonAbilityPoints;
+  
+  
+  $("#submit").on("click", function() {
+		p1 =  $("#t1").val();
+		p2 =  $("#t2").val();
+		p3 =  $("#t3").val();
+		p4 =  $("#t4").val();
+		p5 =  $("#t5").val();
+	    pentagonAbilityPoints = points['points' + p1][0] + ' ' + points['points' + p1][1] + ' ' +
+	    points['points' + p2][2] + ' ' + points['points' + p2][3] + ' ' +
+	    points['points' + p3][4] + ' ' + points['points' + p3][5] + ' ' +
+	    points['points' + p4][6] + ' ' + points['points' + p4][7] + ' ' +
+	    points['points' + p5][8] + ' ' + points['points' + p5][9];
+		abilityPentagon.attr('points', temp).transition().duration(1500).attr('points', pentagonAbilityPoints);
+		temp = pentagonAbilityPoints;
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
