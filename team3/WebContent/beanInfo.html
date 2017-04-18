@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!--   <link rel="stylesheet" href="grid-guide.css">   -->
+<link rel="stylesheet" href="beanInfo.css">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+<script>
+	$(document).ready(function() {
+		var leftArr =  $("#arrow_left");
+		var rightArr = $("#arrow_right");
+		$slider = $(".box6-inner");
+		var left = $slider.css("left");
+		left = parseFloat(left);
+		
+		rightArr.on("click", function() {
+			if(left>-1800){
+				left -=150;
+				$slider.css("left", left);
+			}
+		})
+		leftArr.on("click", function() {
+			if(left<0){
+				left += 150;
+				$slider.css("left", left)
+			}
+		})
+	});
+ </script>
+</head>
+<body>
+<header>
+<div class="box1">
+	<div class="box1-1">
+		<h1><a href="">Roster</a></h1>
+	</div>
+	<div class="box1-2">
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">장바구니</a></li>
+			<li><a href="">마이페이지</a></li>
+		</ul>
+	</div>
+</div>
+<div class="box2">
+	<div class="box2-inner">
+		<ul>
+			<li><a href="#">About us</a></li>
+			<li><a href="#">원두정보</a></li>
+			<li><a href="#">Order</a></li>
+			<li><a href="#">Community</a></li>
+			<li><a href="#">1:1 문의</a></li>
+			<li><a href="#">공지사항</a></li>
+		</ul>
+	</div>
+</div>
+</header>
+
+<div class="box6">
+	<div class="box6-arrow">
+		<i class="fa fa-chevron-left" id="arrow_left"></i>
+		<i class="fa fa-chevron-right" id="arrow_right"></i>
+	</div>
+	<div class="box6-inner">
+		<ul>
+			<li><a href=""><img src="beans/freesia.jpg"></a></li>
+			<li><a href=""><img src="beans/deepPurple.jpg"></a></li>
+			<li><a href=""><img src="beans/roasted.jpg"></a></li>
+			<li><a href=""><img src="beans/hemlock.jpg"></a></li>
+			<li><a href=""><img src="beans/softyBlue.jpg"></a></li>
+			<li><a href=""><img src="beans/colombiaSupremo.jpg"></a></li>
+			<li><a href=""><img src="beans/brazil.jpg"></a></li>
+			<li><a href=""><img src="beans/cayenne.jpg"></a></li>
+			<li><a href=""><img src="beans/silkyBrown.jpg"></a></li>
+			<li><a href=""><img src="beans/coral.jpg"></a></li>
+			<li><a href=""><img src="beans/cokein.jpg"></a></li>
+			<li><a href=""><img src="beans/dazzlingBlue.jpg"></a></li>
+			<li><a href=""><img src="beans/freesiaReserve.jpg"></a></li>
+			<li><a href=""><img src="beans/deepPurpleReserve.jpg"></a></li>
+			<li><a href=""><img src="beans/silkyBrownReserve.jpg"></a></li>
+			<li><a href=""><img src="beans/coralReserve.jpg"></a></li>
+			<li><a href=""><img src="beans/tangerineTango.jpg"></a></li>
+			<li><a href=""><img src="beans/warmTaupe.jpg"></a></li>
+			<li><a href=""><img src="beans/fiesta.jpg"></a></li>
+		</ul>
+	</div>
+</div>
+<div class="box7">
+	<div class="box7-1">
+		<img src="img/freesia.jpg">
+	</div>
+	<div class="box7-2">
+		<h1>FREESIA</h1>
+		<ul>
+			<li class="left">원산지</li>
+			<li class="right">	Colombia, Kenya, Ethiopia</li>
+			<li class="left">판매가</li>
+			<li class="right">7,000원</li>
+			<li class="left">Blending</li>
+			<li class="right">콜롬비아 케냐 에티오피아</li>
+			<li class="left">FREESIA[200g]</li>
+			<li class="center"><input type="number" min="1" max="20" style="width: 35px; text-align: right;">개</li>
+			<li class="last">총 금액원</li>
+		</ul>
+		<h2>총 상품금액 : 20,000원 (3개)</h2>
+		<div class="buttons">
+			<a href="" class="buyBtn">BUY IT NOW</a>
+			<div class="btn2nd">
+				<a href="">CART</a><a href="" id="wishList" >WISH LIST</a><a href="" id="QA">Q&A</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+<div class="box4">
+	<div class="box4-1">
+		<h3>Roster</h3>
+		<p>M/V, Viral, CM, SNS Video, PR Movie & Brand Film,<br/>Creative Moving Image Creation.</p>
+	</div>
+	<div class="box4-2">
+		<h3>Contacts</h3>
+		<p>+82(0)10-9355-9041</p>
+	</div>
+	<div class="box4-3">
+		<h3>Social Network</h3>
+		<ul>
+			<li><a href="#" class="follow-tw">
+				<i class="fa fa-fw fa-twitter"></i>
+				Twitter
+			</a></li>
+			<li><a href="#" class="follow-fb">
+				<i class="fa fa-fw fa-facebook"></i>
+				Facebook
+			</a></li>
+						<li><a href="#" class="follow-yt">
+						<i class="fa fa-fw  fa-youtube-play"></i>
+						Youtube
+				</a></li>
+		</ul>
+	</div>
+</div>
+<div class="box5">
+	<h5>since 2017 copyright(c) FOXENTERTAINMENT All rights reserved</h5>
+</div>
+</footer>
+</body>
+</html>
